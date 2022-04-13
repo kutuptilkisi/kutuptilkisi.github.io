@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>giriş yap</title>
+<meta name="theme-color" content="gray" />
+<link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAwOHgpBRb70qZkSL6h6sPBHeGefW-rcPA",
+    authDomain: "kutuptilkisi-web.firebaseapp.com",
+    projectId: "kutuptilkisi-web",
+    storageBucket: "kutuptilkisi-web.appspot.com",
+    messagingSenderId: "511556371913",
+    appId: "1:511556371913:web:844a6e783065f7a0905418",
+    measurementId: "G-W61HBLL0CK"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</head>
+<body>
+<style>
+body{
+background-color: white;
+}
+</style>
+<input type="email" placeholder="Email..." id="email_field" />
+<input type="password" placeholder="Password..." id="password_field" />
+<button onclick="login()">Login to Account</button>
+</body>
+</html>
