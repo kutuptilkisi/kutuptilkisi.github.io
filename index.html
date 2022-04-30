@@ -27,6 +27,67 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
+<script type="module">
+      import init, { start, pick_splash } from './pkg/mcse_web.js';
+
+      function swapElements(toHide, toShow) {
+        document.getElementById(toHide).hidden = true;
+        document.getElementById(toShow).hidden = false;
+      }
+
+      async function run(params) {
+        swapElements("start", "status-resources");
+        swapElements("header-product", "header-squid");
+
+        let resource_request = await fetch("/pkg/resources.zip");
+        let resource_data = await resource_request.arrayBuffer();
+
+        swapElements("status-resources", "status-code");
+        await init();
+        console.log(pick_splash());
+
+        let canvas = document.createElement("canvas");
+        document.body.appendChild(canvas);
+
+        let autorun = params.get("autorun");
+
+        let start_display = function() {
+          document.getElementById("panel").remove();
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          start(canvas, params.get("module"), resource_data);
+        };
+
+        if (autorun == "window") {
+          start_display();
+        } else {
+          swapElements("status-code", "select");
+
+          document.getElementById("fullscreen").onclick = function() {
+            canvas.requestFullscreen()
+              .then(start_display)
+              .catch(function(e) {
+                console.log("Failed to request fullscreen", e);
+                start_display();
+              }
+            );
+          };
+
+          document.getElementById("window").onclick = start_display;
+        }
+      }
+
+      window.onload = function() {
+        let params = new URLSearchParams(window.location.search);
+        if (params.has("autorun")) {
+          run(params);
+        } else {
+          document.getElementById("webgl").onclick = function() {
+            run(params);
+          }
+        }
+      };
+    </script>
 </head>
 <body>
 <style>
@@ -41,7 +102,56 @@ text-align: center;
 p{
 font-size: 20;
 }
+#panel {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 0 auto;
+      }
+
+      .controls:not([hidden]) {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .controls img {
+        margin-bottom: 20px;
+      }
+
+      .controls * {
+        text-align: center;
+      }
+
+      .controls a {
+        text-decoration: none;
+        display: inline-block;
+
+        background-color: #34aa2f !important;
+        border-color: #34aa2f !important;
+        text-decoration: none;
+        font-weight: 700;
+        text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+        color: #fff !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 0.5rem 3.25rem !important;
+        font-size: 19.2px !important;
+        line-height: 1.5;
+      }
+
+      .alt {
+        text-transform: uppercase;
+      }
+      .alt::before {
+        content: "~";
+      }
+      .alt::after {
+        content: "~";
+      }
 </style>
 <h1>kutup tilkisi</h1>
+<canvas width="1366" height="768"></canvas>
 </body>
 </html>
