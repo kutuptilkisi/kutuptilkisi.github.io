@@ -1,0 +1,21 @@
+body{
+background-color: LemonChiffon;
+}
+h1{
+font-size: 100;
+font-family: Pacifico;
+text-align: center;
+}
+p{
+font-size: 20;
+}
+button{
+font-size: 20;
+background-color: #fff7b3;
+font-family: Noto Sans;
+}
+fieldset{
+background-image: url("F:/enes.net/assets/arkaplan.png");
+border-color: rgb(255 204 0);
+border-width: 12px;
+}
