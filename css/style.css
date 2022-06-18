@@ -23,3 +23,6 @@ h2{
 font-size: 40;
 font-family: Noto Sans;
 }
+iframe{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px;
+}
