@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>enes🍰</title>
+		<link rel="icon" href="assets/favicon.png" type="image/x-icon">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+		<meta name="theme-color" content="LemonChiffon">
+		<meta charset="UTF-8">
+	</head>
+	<body>
+	<fieldset>
+		<video width="400" controls>
+			<source src="video.mp4" type="video/mp4">
+		</video>
+		</fieldset>
+	</body>
+</html>
