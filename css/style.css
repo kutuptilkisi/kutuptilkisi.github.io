@@ -19,3 +19,7 @@ background-image: url("https://raw.githubusercontent.com/kutuptilkisi/kutuptilki
 border-color: rgb(255 204 0);
 border-width: 12px;
 }
+h2{
+font-size: 40;
+font-family: Noto Sans;
+}
