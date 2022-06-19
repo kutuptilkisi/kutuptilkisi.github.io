@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>enes🍰</title>
+		<link rel="icon" href="assets/favicon.png" type="image/x-icon">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+		<meta name="theme-color" content="LemonChiffon">
+		<link rel="stylesheet" href="css/style.css">
+		<meta charset="UTF-8">
+		<script src="js/qrcode.min.js"></script>
+	</head>
+	<body>
+		<div id="qrcode"></div>
+		<script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), {
+            text: 'barkoda cevrilecek veriyi buraya yazınız.',
+            width: 250,
+            height: 250,
+            colorDark: 'red',
+            colorLight: 'white',
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+		 <script type="text/javascript">
+-- app.js --
+ 
+let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+ 
+scanner.addListener('scan', function (content) {
+   //Barkod okunduğunda veriyi burası yakalayacaktır.
+   alert(content)
+});
+ 
+let cameraList = []; //Tüm kameraları tutacağımız liste.
+ 
+Instascan.Camera.getCameras().then(function (cameras, image) {
+   //PC'de ki tüm kameraları algılayarak bizlere getirecektir.
+   this.cameraList = cameras;
+   cameras.forEach(element => {
+      //Gelen kameralar select elementinde listelenmektedir.
+      let cameraList = document.getElementById("cameras");
+      let option = document.createElement("option");
+      option.text = element.id;
+      option.value = element.id;
+      cameraList.add(option);
+      scanner.start(cameras[0])
+   });
+}).catch(() => console.error(e));
+ 
+document.getElementById("cameras").addEventListener("change", event => {
+   //Select elementinde seçilen kamerayı qr code scanner olarak belirleyen olaydır.
+   scanner.start(this.cameraList.find(c => c.id == event.target.value));
+})
+		</script>
+	</body>
+</html>
