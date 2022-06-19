@@ -28,7 +28,7 @@ body{
     animation: trex .5s linear;
 }
  
-#kaktus{
+#blok{
     position: absolute;
     width: 23px;
     height: 46px;
@@ -36,11 +36,11 @@ body{
     bottom: 0;
     left:775px;
 }
-.kaktus-animate{
+.blok-animate{
     animation:kaktus 2s linear infinite;
 }
  
-@keyframes kaktus{
+@keyframes blok{
     0%{left:775px;}
     100%{left:-40px}
 }
