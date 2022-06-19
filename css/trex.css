@@ -20,7 +20,7 @@ body{
     position: absolute;
     width: 39px;
     height: 42px;
-    background: url(trex.png);
+    background: url(https://raw.githubusercontent.com/kutuptilkisi/kutuptilkisi.github.io/main/assets/trex.png);
     bottom:0;
     
 }
@@ -32,7 +32,7 @@ body{
     position: absolute;
     width: 23px;
     height: 46px;
-    background: url(kaktus.png);
+    background: url(https://raw.githubusercontent.com/kutuptilkisi/kutuptilkisi.github.io/main/assets/blok.png);
     bottom: 0;
     left:775px;
 }
