@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background: #000;
+}
+ 
+#oyun{
+    width: 800px;
+    height: 200px;
+    border:1px solid #000;
+    background: #fff;
+    margin:100px auto;
+    position: relative;
+    overflow:hidden;
+}
+ 
+#trex{
+    position: absolute;
+    width: 39px;
+    height: 42px;
+    background: url(trex.png);
+    bottom:0;
+    
+}
+.trex-animate{
+    animation: trex .5s linear;
+}
+ 
+#kaktus{
+    position: absolute;
+    width: 23px;
+    height: 46px;
+    background: url(kaktus.png);
+    bottom: 0;
+    left:775px;
+}
+.kaktus-animate{
+    animation:kaktus 2s linear infinite;
+}
+ 
+@keyframes kaktus{
+    0%{left:775px;}
+    100%{left:-40px}
+}
+@keyframes trex{
+    0%{bottom:0px;}
+    25%{bottom:70px;}
+    75%{bottom:70px;}
+    100%{bottom:0px;}
+ 
+}
