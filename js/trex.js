@@ -1,11 +1,11 @@
 const trex=document.querySelector("#trex");
-const blok=document.querySelector("#blok");
+const kaktus=document.querySelector("#kaktus");
  
 function zipla(){
    
-    if(blok.classList!="blok-animate")
+    if(kaktus.classList!="kaktus-animate")
     {
-        blok.classList.add("blok-animate");
+        kaktus.classList.add("kaktus-animate");
     }
  
     if(trex.classList!="trex-animate")
@@ -23,13 +23,13 @@ var carpismaKOntrol =setInterval(function(){
                 .getComputedStyle(trex)
                 .getPropertyValue("bottom"));
  
-        var blokLeft =parseInt(window
-                .getComputedStyle(blok)
+        var kaktusLeft =parseInt(window
+                .getComputedStyle(kaktus)
                 .getPropertyValue("left"));
         
-        if(blokLeft > 0 && blokLeft < 40 && trexBottom < 40){
+        if(kaktusLeft > 0 && kaktusLeft < 40 && trexBottom < 40){
             
-            kaktus.classList.remove("blok-animate");
+            kaktus.classList.remove("kaktus-animate");
             kaktus.style.display="none";
             alert("oyun bitti");
         }
