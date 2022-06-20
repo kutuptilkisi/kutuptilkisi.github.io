@@ -8,9 +8,9 @@ body{
  
 #oyun{
     width: 800px;
-    height: 200px;
+    height: 280px;
     border:1px solid #000;
-    background: #fff;
+    background: LightCyan;
     margin:100px auto;
     position: relative;
     overflow:hidden;
@@ -18,9 +18,9 @@ body{
  
 #trex{
     position: absolute;
-    width: 39px;
-    height: 42px;
-    background: url(https://raw.githubusercontent.com/kutuptilkisi/kutuptilkisi.github.io/main/assets/trex.png);
+    width: 78px;
+    height: 84px;
+    background: url(trex.png);
     bottom:0;
     
 }
@@ -28,26 +28,26 @@ body{
     animation: trex .5s linear;
 }
  
-#blok{
+#kaktus{
     position: absolute;
-    width: 23px;
-    height: 46px;
-    background: url(https://raw.githubusercontent.com/kutuptilkisi/kutuptilkisi.github.io/main/assets/blok.png);
+    width: 46px;
+    height: 92px;
+    background: url(kaktus.png);
     bottom: 0;
     left:775px;
 }
-.blok-animate{
+.kaktus-animate{
     animation:kaktus 2s linear infinite;
 }
  
-@keyframes blok{
+@keyframes kaktus{
     0%{left:775px;}
     100%{left:-40px}
 }
 @keyframes trex{
     0%{bottom:0px;}
-    25%{bottom:70px;}
-    75%{bottom:70px;}
+    25%{bottom:140px;}
+    75%{bottom:140px;}
     100%{bottom:0px;}
  
 }
