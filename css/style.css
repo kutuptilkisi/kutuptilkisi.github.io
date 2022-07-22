@@ -1,6 +1,6 @@
 body{
 background-color: LemonChiffon;
-cursor:url('kutuptilkisi.github.io/assets/cursor.png');
+cursor:url('https://kutuptilkisi.github.io/assets/cursor.png');
 }
 h1{
 font-size: 100;
@@ -16,7 +16,7 @@ background-color: #fff7b3;
 font-family: Noto Sans;
 }
 fieldset{
-background-image: url("https://raw.githubusercontent.com/kutuptilkisi/kutuptilkisi.github.io/main/assets/arkaplan.png");
+background-image: url("https://kutuptilkisi.github.io/assets/arkaplan.png");
 border-color: rgb(255 204 0);
 border-width: 12px;
 }
